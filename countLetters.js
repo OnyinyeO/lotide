@@ -7,15 +7,18 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const countLetters = (allItem, expectedResult) => {
+const countLetters = (allItem) => {
   const result = {};
   for (const item of allItem) {
     if (item !== " ")
-      if (expectedResult[item]) {
-        if (result[item]) {
-          result[item] += 1;
-        } else result[item] = 1;
-      }
+      if (result[item]) {
+        result[item] += 1;
+      } else result[item] = 1;
   }
   return result;
 };
+
+const allItem = "lighthouse in the house";
+const letterCounts = countLetters(allItem);
+
+console.log(letterCounts);
