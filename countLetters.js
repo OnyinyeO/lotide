@@ -7,13 +7,15 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const countLetters = (allItem) => {
+const countLetters = (allItem, expectedResult) => {
   const result = {};
   for (const item of allItem) {
     if (item !== " ")
-      if (result[item]) {
-        result[item] += 1;
-      } else result[item] = 1;
+      if (expectedResult[item]) {
+        if (result[item]) {
+          result[item] += 1;
+        } else result[item] = 1;
+      }
   }
   return result;
 };
