@@ -7,22 +7,7 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const eqArrays = function (arr1, arr2) {
-  // If the arrays have different lengths, they are not equal
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  // Compare each element of the arrays
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-
-  // All elements are equal
-  return true;
-};
+const eqArrays = require("./eqArrays");
 
 const assertArraysEqual = function (arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
@@ -35,3 +20,5 @@ const assertArraysEqual = function (arr1, arr2) {
     );
   }
 };
+
+module.exports = assertArraysEqual;
